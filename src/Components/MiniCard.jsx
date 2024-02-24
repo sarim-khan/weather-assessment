@@ -11,9 +11,12 @@ import wind from '../assets/icons/windy.png'
 const MiniCard = ({ time, temp, iconString }) => {
   const [icon, setIcon] = useState()
 
+  console.log(iconString);
   useEffect(() => {
     if (iconString) {
       if (iconString.toLowerCase().includes('cloud')) {
+        console.log(iconString.toLowerCase().includes('cloud'));
+
         setIcon(cloud)
       } else if (iconString.toLowerCase().includes('rain')) {
         setIcon(rain)
@@ -26,6 +29,8 @@ const MiniCard = ({ time, temp, iconString }) => {
       } else if (iconString.toLowerCase().includes('snow')) {
         setIcon(snow)
       } else if (iconString.toLowerCase().includes('wind')) {
+        setIcon(wind)
+      } else if (iconString.toLowerCase().includes('overcast')) {
         setIcon(wind)
       }
     }
